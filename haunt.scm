@@ -1,9 +1,11 @@
-(use-modules (haunt asset)
-             (haunt builder blog)
-             (haunt builder atom)
-             (haunt builder assets)
-             (haunt reader commonmark)
-             (haunt site))
+(use-modules 
+ (haunt asset)
+ (haunt builder blog)
+ (haunt builder atom)
+ (haunt builder assets)
+ (haunt reader commonmark)
+ (haunt site)
+)
 
 (site #:title "Kzoo News"
       #:domain "kzoo.news"
@@ -15,4 +17,5 @@
       #:builders (list (blog)
                        (atom-feed)
                        (atom-feeds-by-tag)
-                       (static-directory "images")))
+                       (static-directory "images")
+		       (static-directory "static" "./")))
